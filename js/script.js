@@ -1,18 +1,27 @@
-//Made by: Aiden McLeod
-//Made in: March 2022
+// Aiden McLeod
+// ICS2O-Unit5-04-HTML
+// May 2 2022
 
 'use strict'
 /**
- * This function calculates area of a sphere.
+ * Check service worker.
  */
-function calculate() {
-  // input
-  const radius = parseInt(document.getElementById('radius').value)
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS2O-Unit5-04-HTML/sw.js", {
+    scope: "/ICS2O-Unit5-04-HTML/",
+  })
+}
 
-  // process
+/**
+ * Checks if the user is eligible for student pricing for a museum depending on their age and the current day of the week.
+ */
+function onButtonClick() {
+  const age = document.getElementById("age").value
+  const day = document.getElementById("days").value
 
-  const volume = (4/3)* Math.PI * Math.pow(radius, 3);
-
-  // output
-  document.getElementById('volume').innerHTML = 'Volume is: ' + volume.toFixed(2) + ' cm³'
+  if (day == "tuesday" || day == "thursday" || age > 12 && age < 22) {
+    document.getElementById("result").innerHTML = "<h5>You can pay with the museum's student pricing.</h5>"
+  } else {
+    document.getElementById("result").innerHTML = "<h5>You must pay with the museum's regular pricing.</h5>"
+  }
 }
