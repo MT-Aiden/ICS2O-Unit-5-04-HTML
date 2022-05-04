@@ -19,7 +19,7 @@ function onButtonClick() {
   const age = document.getElementById("age").value
   const day = document.getElementById("days").value
 
-  if (day == "tuesday" || day == "thursday" || age > 12 && age < 22) {
+  if (day == "tuesday" || day == "thursday" && age > 12 && age < 22) {
     document.getElementById("result").innerHTML = "<h5>You can pay with the museum's student pricing.</h5>"
   } else {
     document.getElementById("result").innerHTML = "<h5>You must pay with the museum's regular pricing.</h5>"
