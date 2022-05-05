@@ -1,68 +1,62 @@
 <!DOCTYPE html>
 <!-- ICS2O-Unit-5-04-HTML -->
-<html lang="en-ca">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Test site for ICS2O">
-    <meta name="keywords" content="mths, ICS2O">
-    <meta name="author" content="Aiden McLeod">
+    <meta charset="utf-8" />
+    <meta name="description" content="a program in JavaScript that actually does what is presented in the movie" />
+    <meta name="keywords" content="mths, ics2o" />
+    <meta name="author" content="Aiden McLeod" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#FFFFFF" />
-    <link rel="canonical" href="https://MT-Aiden.github.io/ICS2O-Unit5-04-HTML/" />
-    <link rel="manifest" href="/ICS2O-Unit5-04-HTML/manifest.webmanifest" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></noscript>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"></noscript>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <title>Museum Entry</title>
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_green-green.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>a program in JavaScript that actually does what is presented in the movie</title>
   </head>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
-    <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
-        <div class="mdl-layout-icon"></div>
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout__title">Museum Entry</span>
-          <div class="mdl-layout-spacer"></div>
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="./">Index</a>
-          </nav>
+          <span class="mdl-layout-title">Student Discount, with JS</span>
         </div>
       </header>
+      <main class="mdl-layout__content">
+        <label for="days">Choose a day of the week:</label>
+        <select name="days" id="days">
+          <option value="sunday">Sunday</option>
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+          <option value="saturday">Saturday</option>
+        </select>
+        <br>
+        <br>
+        <h7>Enter your age:</h7>
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="age">
+            <label class="mdl-textfield__label" for="age">Put your age here</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <br>
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="myButtonClicked()"
+        >
+          Pricing
+        </button>
+        <div id="answers"></div>
+      </main>
     </div>
-    <br>
-    <br>
-    <br>
-    <h3>Enter information:</h3>
-    <h4>Enter age:</h4>
-    <!-- Numeric Textfield with Floating Label -->
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="number" id="age">
-        <label class="mdl-textfield__label" for="age">Age...</label>
-        <span class="mdl-textfield__error">Input is not age!</span>
-      </div>
-    </form>
-    <!-- Selection Box -->
-    <h4>Enter day of week:</h4>
-    <select name="days" id="days">
-      <option value="sunday">Sunday</option>
-      <option value="monday">Monday</option>
-      <option value="tuesday">Tuesday</option>
-      <option value="wednesday">Wednesday</option>
-      <option value="thursday">Thursday</option>
-      <option value="friday">Friday</option>
-      <option value="saturday">Saturday</option>
-    </select>
-    <br>
-    <br>
-    <!-- Accent-colored raised button with ripple -->
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="onButtonClick()">
-      Show Result
-    </button>
-    <div id="result"></div>
   </body>
 </html>
